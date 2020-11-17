@@ -1,0 +1,186 @@
+/* Reset deafult behaviour  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* Main container  */
+.Container {
+	margin: 5% auto 0 auto;
+	width: 15rem;
+	height: fit-content;
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 10px;
+}
+
+/* Header of the dialogue along with the close button  */
+.Title {
+	padding: 20px 10px 0 10px;
+	background-color: #eeeeee;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.Title p {
+	height: 40px;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.closeButton {
+	background: url('images/close.png') no-repeat;
+	width: 16px;
+	float: right;
+	border: none;
+	cursor: pointer;
+	margin-top: 8px;
+}
+
+.closeButton:hover {
+	background-color: rgb(120, 120, 120);
+}
+
+/* Center padding for form elements  */
+form {
+	padding: 10px 10px 0 10px;
+}
+
+/* current Range Display  */
+.current {
+	line-height: 200%;
+	font-size: 13px;
+	padding-bottom: 10px;
+}
+
+/* Blank Lines */
+hr {
+	height: 1px;
+	border: 0;
+	border-top: 1px solid rgb(0, 0, 0);
+}
+
+/* form inputs along with preset buttons */
+.FormBtn {
+	line-height: 200%;
+	margin-top: 10px;
+}
+
+/* using nth child selector to select a specific child element  */
+.FormBtn p:nth-child(1) {
+	font-weight: 700;
+}
+
+.FormBtn label {
+	font-size: small;
+}
+
+/* styling for the default calender icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+	display: block;
+	background: url(images/date.png) no-repeat;
+	width: 20px;
+	height: 20px;
+	margin-top: 5px;
+	border-width: thin;
+}
+
+.Date {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+/* styling for the input boxes with the calender */
+.Date input,
+.Pick input {
+	width: 200px;
+	color: rgb(162, 162, 162);
+	font-style: italic;
+}
+
+/* Styling for the presets */
+.FormBtn button {
+	width: 100px;
+	border: solid rgb(204, 204, 204) 2px;
+	box-shadow: 0px 2px 0px rgb(204, 204, 204);
+	display: inline-block;
+	margin: 4px 0px;
+	cursor: pointer;
+	text-align: center;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+/* hover and active effect for the presets  */
+.active,
+.FormBtn button:hover:enabled,:focus{
+	background-color: rgba(0, 0, 255, 0.2);
+	border: solid blue 2px !important;
+	color: blue;
+	text-decoration: underline;
+}
+
+.DateText {
+	font-size: small;
+}
+
+.Buttons {
+	text-align: center;
+}
+.Buttons :disabled{
+    cursor: not-allowed;
+}
+
+.FormBtn button:nth-last-child(1) {
+	width: 204px;
+}
+
+/* Custom Date picker  */
+.PickText {
+	font-size: 10px;
+	text-align: left !important;
+}
+
+.PickText p {
+	padding-left: 10px;
+}
+
+/* Form submit button  */
+.Update {
+	text-align: right;
+	padding: 10px 10px 10px 0;
+}
+
+.Update button {
+	background-color: blue;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.Update button:hover{
+    background-color: rgb(162, 162, 162);
+    cursor: pointer;
+}
+
+/* Button to open the closed Dialogue box, initially not visible  */
+.DisplayBtn{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

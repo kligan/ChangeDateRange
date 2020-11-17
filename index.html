@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Change Date Range</title>
+
+    <!-- stylesheet -->
+      <link rel="stylesheet" href="index.css">
+
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+      <!-- Favicon Image for the site -->
+      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+      <!-- Javascript  -->
+      <script src="Script.js"></script>
+   </head>
+
+   <body>
+       <!-- Main Container of the dialogue box -->
+      <div role="MainContainer" id="ContainerId" class="Container">
+
+        <!-- Header of the Dialog along with the close Button  -->
+         <div role="Title" class="Title">
+            <span><input name="closeButton" id="closeButton" class="closeButton" type="button" src="images/close.png" onclick="Close()"></span>
+            <p title="Dialog to change the Date Range">Change date range</p>
+         </div>
+
+         <!-- Form to update data  -->
+         <form onsubmit="Submit()" action="#" method="post">
+
+            <!-- Section for the current range  -->
+            <div role="Current Date Range" class="current">
+               <p title="Date range at the current moment">Current range</p>
+               <p title="Date">01/01/2020 to 14/02/2020</p>
+            </div>
+            <hr>
+
+             <!-- Section to choose Inputs which includes custom inputs along with WAI-ARIA standards for web accessibility -->
+            <div role="InputSection" class="FormBtn">
+               <p title="New Range">New range</p>
+               <div role="Selection" >
+                  <input aria-labelledby="FirstSelection" type="radio" id="Starting today" name="NewRange" value="Starting today"
+                     checked>
+                  <label id="FirstSelection" for="Starting today">Starting today</label>
+               </div>
+               <div role="Custom Selection" >
+                  <input aria-labelledby="SecondSelection" type="radio" id="Custom start date" name="NewRange" value="Custom start date">
+                  <label id="SecondSelection" for="Custom start date">Custom start date</label>
+               </div>
+               <div role="DateCalender" class="Date">
+                  <input name="DateCalender" id="DateCalender" type="date"  />
+               </div>
+               <p title="Custom Ranges" class="DateText">Set a date range</p>
+               
+               <!-- set of presets for selection with WAI-ARIA for web accessibility  -->
+               <div role="DateTemplates" class="Buttons">
+                  <button aria-label="Custom Range Button" type="button" value="+1_weeks" disabled>+1 weeks</button>
+                  <button aria-label="Custom Range Button" type="button" value="+2_weeks" disabled>+2 weeks</button>
+                  <button onclick="DisableActive()" aria-label="Custom Range Button" type="button" value="+3_weeks">+3 weeks</button>
+                  <button aria-label="Custom Range Button" type="button" value="+4_weeks" class="active" id="active">+4 weeks</button>
+                  <button onclick="DisableActive()" aria-label="Custom Range Button" type="button" value="+2_months">+2 months</button>
+                  <button onclick="DisableActive()" aria-label="Custom Range Button" type="button" value="+3_months">+3 months</button>
+                  <button onclick="openDialog(); DisableActive()" aria-label="Custom Range Button" type="button" value="custom" >Pick a specific end date</button>
+               </div>
+
+               <!-- Section which is hidden and appears only if the "Pick a specific end date" button is pressed -->
+               <div role="Footer" style="height: 100px;">
+                  <div role="group" id="Pick" class="Pick" style="display: none;  text-align: center; ">
+                     <span class="PickText">
+                        <p title="End Date">End date</p>
+                     </span>
+                     <input name="CustomDatePicker" id="CustomDatePicker" type="date"/>
+                  </div>
+               </div>
+            </div>
+            <hr>
+
+            <!-- Form Submittion Button  -->
+            <div role="FormSubmition" class="Update">
+               <button aria-label="Update Button" type="button">Update</button>
+            </div>
+         </form>
+      </div>
+
+<!-- Display button to show the  closed dialog Box  -->
+      <button aria-label="Display Dialog Button" id="DisplayBtn" onclick="DisplayForm()" class="DisplayBtn">Display</button>
+   </body>
+</html>
